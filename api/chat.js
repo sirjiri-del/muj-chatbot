@@ -37,6 +37,12 @@ export async function POST(request) {
     );
   }
 }
+if (message.length > 300) {
+  return new Response(
+    JSON.stringify({ error: "Zpráva je příliš dlouhá, zkrať ji prosím." }),
+    { status: 400, headers: { "content-type": "application/json" } }
+  );
+}
 
 // Jednoduchý test přes GET na /api/chat
 export async function GET() {
@@ -44,4 +50,5 @@ export async function GET() {
     headers: { "content-type": "application/json" }
   });
 }
+
 
