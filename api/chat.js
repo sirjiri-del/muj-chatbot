@@ -20,7 +20,7 @@ export async function POST(request) {
     // Zavoláme Responses API
     const ai = await client.responses.create({
       model: "gpt-4o",
-      instructions: "Buď užitečný asistent, odpovídej česky a srozumitelně.",
+      instructions: "Buď užitečný asistent, odpovídej česky a srozumitelně a krátce. Mluv řečí, jakou mluvili úředníci před sto lety!",
       input: message
     });
 
@@ -44,3 +44,4 @@ export async function GET() {
     headers: { "content-type": "application/json" }
   });
 }
+
